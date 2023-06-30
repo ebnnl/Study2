@@ -2,102 +2,19 @@ fileFormatVersion: 2
 guid: 95968de295cfc17459a078968a3de19a
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: Carabiner
-  - first:
-      1: 100002
-    second: //RootNode
-  - first:
-      1: 100004
-    second: key
-  - first:
-      4: 400000
-    second: Carabiner
-  - first:
-      4: 400002
-    second: //RootNode
-  - first:
-      4: 400004
-    second: key
-  - first:
-      21: 2100000
-    second: Hook
-  - first:
-      21: 2100002
-    second: metal
-  - first:
-      21: 2100004
-    second: Copper
-  - first:
-      21: 2100006
-    second: Silver2
-  - first:
-      21: 2100008
-    second: key
-  - first:
-      23: 2300000
-    second: Carabiner
-  - first:
-      23: 2300002
-    second: key
-  - first:
-      23: 2300004
-    second: //RootNode
-  - first:
-      33: 3300000
-    second: Carabiner
-  - first:
-      33: 3300002
-    second: key
-  - first:
-      33: 3300004
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: Carabiner
-  - first:
-      43: 4300002
-    second: key
-  - first:
-      74: 7400000
-    second: Default Take
-  - first:
-      95: 9500000
-    second: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Copper
-    second: {fileID: 2100000, guid: e4f2f60394e4abd43a4fa4d40692a2a4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hook
-    second: {fileID: 2100000, guid: 65c5c8649ad1b014a9dce7f1902e127a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Silver2
-    second: {fileID: 2100000, guid: 7cd464442d86aa64f8b655c16ecd6da5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: metal
-    second: {fileID: 2100000, guid: 9f16a407b0e8edd47b42ea69ee6497ab, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -115,7 +32,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -127,10 +44,10 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
-    fileIdsGeneration: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -145,7 +62,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -155,7 +72,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -180,9 +97,9 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

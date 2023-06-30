@@ -2,100 +2,19 @@ fileFormatVersion: 2
 guid: e66333f78c6482641b865983fd2f5ce1
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: Hat
-  - first:
-      1: 100002
-    second: //RootNode
-  - first:
-      1: 100004
-    second: La1_001
-  - first:
-      1: 100006
-    second: La2_001
-  - first:
-      1: 100008
-    second: La3_001
-  - first:
-      1: 100010
-    second: La4_001
-  - first:
-      4: 400000
-    second: Hat
-  - first:
-      4: 400002
-    second: //RootNode
-  - first:
-      4: 400004
-    second: La1_001
-  - first:
-      4: 400006
-    second: La2_001
-  - first:
-      4: 400008
-    second: La3_001
-  - first:
-      4: 400010
-    second: La4_001
-  - first:
-      21: 2100000
-    second: belt
-  - first:
-      21: 2100002
-    second: Hat
-  - first:
-      21: 2100004
-    second: ribbon
-  - first:
-      23: 2300000
-    second: Hat
-  - first:
-      23: 2300002
-    second: //RootNode
-  - first:
-      33: 3300000
-    second: Hat
-  - first:
-      33: 3300002
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: Hat
-  - first:
-      74: 7400000
-    second: Default Take
-  - first:
-      95: 9500000
-    second: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hat
-    second: {fileID: 2100000, guid: 54dfb9642c9f18948a76e1b8230c7545, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: belt
-    second: {fileID: 2100000, guid: 5e809fa977ec9d34fab70969c50c9351, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ribbon
-    second: {fileID: 2100000, guid: 2670405c2f60a1e4ebfded3e8104f37d, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -113,7 +32,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -125,10 +44,10 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
-    fileIdsGeneration: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -143,7 +62,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -153,7 +72,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -178,9 +97,9 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

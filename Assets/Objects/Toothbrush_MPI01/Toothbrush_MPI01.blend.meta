@@ -2,99 +2,19 @@ fileFormatVersion: 2
 guid: a8abe92d545bc854588e04123aa1cd3a
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: toothbrush
-  - first:
-      1: 100002
-    second: //RootNode
-  - first:
-      1: 100004
-    second: toothbrushParticle
-  - first:
-      4: 400000
-    second: toothbrush
-  - first:
-      4: 400002
-    second: //RootNode
-  - first:
-      4: 400004
-    second: toothbrushParticle
-  - first:
-      21: 2100000
-    second: Plastic_White
-  - first:
-      21: 2100002
-    second: PlasticRed
-  - first:
-      21: 2100004
-    second: PlasticBrushHAirTrans
-  - first:
-      21: 2100006
-    second: unnamed
-  - first:
-      23: 2300000
-    second: toothbrush
-  - first:
-      23: 2300002
-    second: toothbrushParticle
-  - first:
-      23: 2300004
-    second: //RootNode
-  - first:
-      33: 3300000
-    second: toothbrush
-  - first:
-      33: 3300002
-    second: toothbrushParticle
-  - first:
-      33: 3300004
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: toothbrush
-  - first:
-      43: 4300002
-    second: toothbrushParticle
-  - first:
-      74: 7400000
-    second: Default Take
-  - first:
-      95: 9500000
-    second: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PlasticBrushHAirTrans
-    second: {fileID: 2100000, guid: a8b4f31a9d8fd454a9d3f4ab7c44d0eb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PlasticRed
-    second: {fileID: 2100000, guid: ac2beb5750c73d0469a071a5157480d9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Plastic_White
-    second: {fileID: 2100000, guid: 421b095ceaf73bb4b81f357b5a39d297, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 96093131364500f43a728347c707c9c9, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -112,7 +32,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -124,10 +44,10 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
-    fileIdsGeneration: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -142,7 +62,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -152,7 +72,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
@@ -177,9 +97,9 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
