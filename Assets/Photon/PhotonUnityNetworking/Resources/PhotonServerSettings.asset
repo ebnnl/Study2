@@ -49,6 +49,9 @@ MonoBehaviour:
   - StartPlaying
   - Wait
   - PositionObjects
+  - FaceTable
+  - RaplaceRacket
+  - ReplaceRacket
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -72,11 +72,12 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
     // States
     public const int WAITING = 3;
     public const int PLAYING = 4;
-    public const int EYESCLOSED = 5;
+    public const int FACINGTABLE = 5;
     public const int OBSERVING = 6;
     public const int QUESTIONNAIRE = 7;
     public const int END = 8;
     public const int GOINGTOCROSS = 9;
+    public const int REPLACINGRACKET = 10;
  
     // Current progress in the sequence
 
@@ -107,14 +108,17 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
     [SerializeField]
     private AudioSource audioSource;
     public AudioClip completeQuestionnaire;
+    public AudioClip completeQuestionnaireVR;
     public AudioClip goBack;
-    public AudioClip openEyes;
-    public AudioClip playGame1;
+    public AudioClip observe;
+    public AudioClip playGame;
+    /*public AudioClip playGame1;
     public AudioClip playGame2;
-    public AudioClip playGame3;
+    public AudioClip playGame3;*/
     public AudioClip putHeadset;
-    public AudioClip removeHeadset;
-    public AudioClip stopPlaying;
+    //public AudioClip removeHeadset;
+    public AudioClip replaceRacket;
+    public AudioClip faceTable;
     [SerializeField]
     private float volume = 0.5f;
 
@@ -189,6 +193,10 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
             }
             Debug.Log("transfer");
             owner = true;
+        }
+
+        if (Input.GetKeyUp("r")){
+            ReplayAudio();
         }
 
         ManageStateTriggers();
@@ -338,6 +346,19 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
         hideObjectButton.gameObject.SetActive(false);
     }
 
+    private void ReplayAudio()
+    {
+        if (currentState==WAITING) { audioSource.PlayOneShot(playGame, volume); }
+        else if (currentState==PLAYING) { audioSource.PlayOneShot(playGame, volume); }
+        else if (currentState==FACINGTABLE){ audioSource.PlayOneShot(faceTable, volume); }
+        else if (currentState==OBSERVING){ audioSource.PlayOneShot(observe, volume); }
+        else if (currentState==QUESTIONNAIRE && currentSource==VIRTUAL){ audioSource.PlayOneShot(completeQuestionnaireVR, volume); }
+        else if (currentState == QUESTIONNAIRE && currentSource == REAL) { audioSource.PlayOneShot(completeQuestionnaire, volume); }
+        else if (currentState==GOINGTOCROSS && currentSource == REAL) { audioSource.PlayOneShot(goBack, volume); }
+        else if (currentState == GOINGTOCROSS && currentSource == VIRTUAL) { audioSource.PlayOneShot(putHeadset, volume); }
+        else if (currentState==REPLACINGRACKET){ audioSource.PlayOneShot(replaceRacket, volume); }
+    }
+
     [PunRPC]
     public void StartPlaying()
     {
@@ -354,20 +375,38 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
     }
 
     [PunRPC]
-    public void CloseEyes()
+    public void ReplaceRacket()
     {
         // Change state
         previousState = PLAYING;
-        currentState = EYESCLOSED;
+        currentState = REPLACINGRACKET;
         // Reset timer
         gameTimer = gameDuration;
 
-        currentStateTMP.text = "Eyes closed ";
+        currentStateTMP.text = "Replacing Racket";
 
         // Voice saying to stop playing
-        audioSource.PlayOneShot(stopPlaying, volume);
+        audioSource.PlayOneShot(replaceRacket, volume);
         //Voice saying close your eyes;
-        Debug.Log("Eyes closed");
+        Debug.Log("Replacing Racket");
+
+       
+        previousState = currentState;
+    }
+
+    [PunRPC]
+    public void FaceTable()
+    {
+        // Change state
+        previousState = REPLACINGRACKET;
+        currentState = FACINGTABLE;
+        
+        currentStateTMP.text = "Facing Table ";
+
+        // Voice saying to stop playing
+        audioSource.PlayOneShot(faceTable, volume);
+        //Voice saying close your eyes;
+        Debug.Log("FacingTable");
 
         if (currentSource == REAL)
         {
@@ -381,7 +420,7 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
     public void Observe()
     {
         // Change state
-        previousState = EYESCLOSED;
+        previousState = FACINGTABLE;
         currentState = OBSERVING;
         // Reset timer
         eyesClosedTimer = eyesClosedDuration;
@@ -400,7 +439,7 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
         }
         // Voice saying to open eyes
         // Voice saying to look at the table
-        audioSource.PlayOneShot(openEyes, volume);
+        audioSource.PlayOneShot(observe, volume);
 
         Debug.Log("Observing");
         Debug.Log("Source:");
@@ -425,13 +464,15 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
         if (currentSource == VIRTUAL)
         {
             hideObjectButton.gameObject.SetActive(true);
+            audioSource.PlayOneShot(completeQuestionnaireVR, volume);
         }
         else
         {
             removeObjectTMP.gameObject.SetActive(true);
+            audioSource.PlayOneShot(completeQuestionnaire, volume);
         }
     
-        audioSource.PlayOneShot(completeQuestionnaire, volume);
+        
         Debug.Log("Filling presence questionnaire");
 
         previousState = currentState;
@@ -506,7 +547,7 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
 
         Debug.Log("Waiting for participant to start playing, then press button to start timer");
         // Voice saying which game to play
-        if (currentGame == 0)
+        /*if (currentGame == 0)
         {
             audioSource.PlayOneShot(playGame1, volume);
         }
@@ -517,8 +558,8 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
         else
         {
             audioSource.PlayOneShot(playGame3, volume);
-        }
-
+        }*/
+        audioSource.PlayOneShot(playGame, volume);
         previousState = currentState;
     }
 
@@ -551,16 +592,24 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
                 }   
                 // If end of timer 
                 else{
-                    photonView.RPC("CloseEyes", RpcTarget.All);
+                    photonView.RPC("ReplaceRacket", RpcTarget.All);
                 }
             }
             else if (Input.GetKeyUp("space")){
-                photonView.RPC("CloseEyes", RpcTarget.All);
+                photonView.RPC("ReplaceRacket", RpcTarget.All);
             }
             
         }
 
-        else if (currentState==EYESCLOSED){
+        else if (currentState == REPLACINGRACKET)
+        {
+            if (Input.GetKeyUp("space"))
+            {
+                photonView.RPC("FaceTable", RpcTarget.All);
+            }
+        }
+
+        else if (currentState==FACINGTABLE){
             //Display the object on the table when researcher press button
             /*if(currentSource==VIRTUAL && Input.GetKeyUp("space")){
                 objects[currentObject].SetActive(true);
@@ -570,7 +619,7 @@ public class StudyManager : MonoBehaviour, Photon.Pun.IPunObservable
                 // Start timer
                 if(eyesClosedTimer > 0){
                     eyesClosedTimer -= Time.deltaTime;
-                    currentStateTMP.text = "Eyes closed " + eyesClosedTimer.ToString();
+                    currentStateTMP.text = "Facing Table " + eyesClosedTimer.ToString();
                     //Debug.Log(eyesClosedTimer);
                 }
                 // If end of timer

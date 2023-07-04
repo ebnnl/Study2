@@ -47,8 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   training: 0
-  questionnaireGO: {fileID: 0}
-  nbQuestions: 4
   objects:
   - {fileID: 0}
   - {fileID: 0}
@@ -89,17 +87,24 @@ MonoBehaviour:
   eyesClosedDuration: 1
   observingDuration: 1
   audioSource: {fileID: 4761945967790842617}
-  completeQuestionnaire: {fileID: 8300000, guid: 79bdca1ca7233124996eaaaf0b1e1bba, type: 3}
-  goBack: {fileID: 8300000, guid: 77fdbfc93f2b03f4d8a8380d254b5ee1, type: 3}
-  openEyes: {fileID: 8300000, guid: c3e45e63f29295b4e85e6608c14f8a17, type: 3}
-  playGame1: {fileID: 8300000, guid: a2919e760003e564091ac5fef4308cac, type: 3}
-  playGame2: {fileID: 8300000, guid: 368db465a8e98174a9bab6509f2b93b1, type: 3}
-  playGame3: {fileID: 8300000, guid: 3e521ca8a4163a0448aa36e9ae3aea02, type: 3}
-  putHeadset: {fileID: 8300000, guid: b48a2615369a31a4dbffe6d372bebfc8, type: 3}
-  removeHeadset: {fileID: 8300000, guid: 7645e60f5a035c9428aa4cf8c8df5bd9, type: 3}
-  stopPlaying: {fileID: 8300000, guid: 22fbc6d50cb429e4c9a59ff80aca037a, type: 3}
-  volume: 0.5
+  completeQuestionnaire: {fileID: 8300000, guid: 135919f6b0697dd418c9a36d29d9ff37, type: 3}
+  completeQuestionnaireVR: {fileID: 8300000, guid: 1c8f1154ee8c6be4d9abad5488182e6a, type: 3}
+  goBack: {fileID: 8300000, guid: 67cd6050472f11c428419d313f789c5d, type: 3}
+  observe: {fileID: 8300000, guid: f778dde0a139386418a8cafe38b457a8, type: 3}
+  playGame: {fileID: 8300000, guid: e623c947bd007fd4ab3217a7ba640abd, type: 3}
+  putHeadset: {fileID: 8300000, guid: f2146403a929ef54ebd68ff5fdec22b7, type: 3}
+  replaceRacket: {fileID: 8300000, guid: ad4360da3cc7e59488e4581238502f33, type: 3}
+  faceTable: {fileID: 8300000, guid: fef67bc2cdc8f5141a98014c4012d89d, type: 3}
+  volume: 1
   photonView: {fileID: 0}
+  currentSourceTMP: {fileID: 0}
+  nextSourceTMP: {fileID: 0}
+  currentObjectTMP: {fileID: 0}
+  currentStateTMP: {fileID: 0}
+  nextObjectTMP: {fileID: 0}
+  hideObjectButton: {fileID: 0}
+  placeObjectTMP: {fileID: 0}
+  removeObjectTMP: {fileID: 0}
 --- !u!82 &4761945967790842617
 AudioSource:
   m_ObjectHideFlags: 0
