@@ -96,14 +96,14 @@ public class MainManager : MonoBehaviour, Photon.Pun.IPunObservable
             ownerSetup = true;
         }
 
-        if (controllerButton1.action.ReadValue<float>() == 1 && !ownerSetup)
+        /*if (controllerButton1.action.ReadValue<float>() == 1 && !ownerSetup)
         {
             if (!participantPhotonView.IsMine)
             {
                 participantPhotonView.TransferOwnership(PhotonNetwork.LocalPlayer);
             }
             ownerSetup = true;
-        }
+        }*/
 
         if (Input.GetKeyUp("t")){
             StartTraining();
